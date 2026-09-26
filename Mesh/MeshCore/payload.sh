@@ -2,9 +2,9 @@
 # SPDX-License-Identifier: MIT
 # Title: MeshCore
 # Description: Install and operate the native MeshCore Pager companion.
-# Author: Pager MeshCore contributors
+# Author: Glytch
 # Version: 0.2.0-pager-27
-# Category: Network
+# Category: general
 # Dependencies: WiFi Pineapple Pager firmware 1.1.2+; Glytch Mesh Mod for LoRa
 
 set -u
