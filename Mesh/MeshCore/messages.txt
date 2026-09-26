@@ -1,0 +1,5 @@
+# One direct message per line. Blank lines and lines beginning with # are ignored.
+# Keep each message at 160 bytes or fewer.
+Acknowledged.
+On my way.
+Please reply when able.
