@@ -12,7 +12,14 @@ set -u
 RELEASE_VERSION=0.2.0-pager-27
 if [ -n "${MESHCORE_PAYLOAD_DIR:-}" ]; then
     PAYLOAD_DIR=$MESHCORE_PAYLOAD_DIR
+elif [ -n "${_PAYLOAD_HOME:-}" ]; then
+    # Pager firmware executes a temporary copy of this script. Its native
+    # payload home, not BASH_SOURCE, points to the installed assets directory.
+    PAYLOAD_DIR=$_PAYLOAD_HOME
+elif [ -n "${PAYLOAD_HOME:-}" ]; then
+    PAYLOAD_DIR=$PAYLOAD_HOME
 else
+    # Direct terminal execution and host-side tests have no firmware wrapper.
     PAYLOAD_DIR=$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 fi
 ASSETS="$PAYLOAD_DIR/assets"
